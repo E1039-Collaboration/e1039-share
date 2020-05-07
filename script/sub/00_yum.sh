@@ -24,6 +24,7 @@ done <<EOF
   screen
   wget
   patch
+  libtool
   git-all
   gcc
   gcc-c++
