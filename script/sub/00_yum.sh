@@ -5,8 +5,8 @@ if [ ! -e /etc/redhat-release ] ; then
     echo "Abort since this script assumes Scientific Linux."
     exit 1
 fi
-if ! grep -q 'Scientific Linux release 7.[67] ' /etc/redhat-release ; then
-    echo "The OS version seems not SL 7.6 nor 7.7."
+if ! grep -q 'Scientific Linux release 7.[678] ' /etc/redhat-release ; then
+    echo "The OS version seems not SL 7.6, 7.7 or 7.8."
     echo "Abort since this script assumes this version."
     exit 1
 fi
@@ -22,6 +22,8 @@ while read PKG ; do
     echo "$LIST_ALL" | grep -q "^${PKG}\." || LIST_PKG+=("$PKG")
 done <<EOF
   screen
+  wget
+  patch
   git-all
   gcc
   gcc-c++
