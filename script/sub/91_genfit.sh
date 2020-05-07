@@ -14,10 +14,10 @@ DIR_WORK=$DIR_BUILD/genfit
 mkdir -p $DIR_WORK
 cd       $DIR_WORK
 
-git clone https://github.com/GenFit/GenFit.git
+git clone https://github.com/E1039-Collaboration/GenFit.git
 mkdir GenFit-build
 cd    GenFit
-git checkout cd7d73739a5950cda91e8de6703ca54aa3832342
+git checkout 3e19ef3b19958d52b8f0c461ab452aebb10ac1e1
 patch -p0 <$DIR_DAT/patch.txt  # Made by Abinash, DocDB 7650
 cd ../GenFit-build
 
