@@ -3,7 +3,7 @@ if [ $E1039_SHARE ] ; then # Clean up the old components
     function DropEleFromPath {
 	local -r NAME=$1
 	local -r  ELE=$2
-	local -r CONT=$(eval "echo :\$$NAME:" | sed -e 's/:/::/g' -e "s%:$ELE:%%g" -e 's/:\+/:/g' -e 's/^://' -e 's/:$//')
+	local -r CONT=$(eval "echo :\$$NAME:" | sed -e 's/:/::/g' -e "s%:$ELE:%%g" -e 's/:\+/:/g' -e 's/^://' -e 's/:$//'  -e 's/\ /\\ /g')
 	eval "$NAME=$CONT"
     }
     DropEleFromPath PATH            $E1039_SHARE/bin
@@ -35,6 +35,6 @@ export              PATH=$E1039_SHARE/bin:$PATH
 export             CPATH=$E1039_SHARE/include:$CPATH
 export      LIBRARY_PATH=$E1039_SHARE/lib:$E1039_SHARE/lib64:$LIBRARY_PATH
 export   LD_LIBRARY_PATH=$E1039_SHARE/lib:$E1039_SHARE/lib64:$LD_LIBRARY_PATH
-export ROOT_INCLUDE_PATH=$E1039_SHARE/include/GenFit:$E1039_SHARE/include/mysql
+export ROOT_INCLUDE_PATH=$E1039_SHARE/include/GenFit:$E1039_SHARE/include/mysql:$E1039_SHARE/include/Geant4
 
 export ROOT_INCLUDE_PATH_E1039_SHARE=$ROOT_INCLUDE_PATH
