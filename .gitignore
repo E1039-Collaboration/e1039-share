@@ -1,3 +1,6 @@
 inst
 root
 src
+build
+.vscode
+log
