@@ -9,7 +9,6 @@ test -e $DIR_INST/lib/libRaveBase.a && exit
 
 source $DIR_INST/this-share.sh
 
-DIR_DAT=$(readlink -f ${0%'.sh'})
 DIR_WORK=$DIR_BUILD/rave
 mkdir -p $DIR_WORK
 cd       $DIR_WORK

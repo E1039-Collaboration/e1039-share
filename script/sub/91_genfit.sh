@@ -10,7 +10,6 @@ test -e $DIR_INST/lib64/libgenfit2.so && exit
 source $DIR_INST/this-share.sh
 export RAVEPATH=$DIR_BUILD/rave/rave
 
-DIR_DAT=$(readlink -f ${0%'.sh'})
 DIR_WORK=$DIR_BUILD/genfit
 rm -rf   $DIR_WORK
 mkdir -p $DIR_WORK
