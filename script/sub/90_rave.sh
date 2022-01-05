@@ -2,12 +2,13 @@
 ##
 ## Install rave, for vertex finding and fitting
 ##
-set -e
 test -z $DIR_BUILD && exit 9
 test -z $DIR_INST  && exit 9
 test -e $DIR_INST/lib/libRaveBase.a && exit
 
 source $DIR_INST/this-share.sh
+
+set -e
 
 DIR_WORK=$DIR_BUILD/rave
 mkdir -p $DIR_WORK

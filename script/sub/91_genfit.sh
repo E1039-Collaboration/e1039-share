@@ -2,13 +2,14 @@
 ##
 ## Install GenFit, which is required by e1039-core/packages/PHGenFitPkg
 ##
-set -e
 test -z $DIR_BUILD && exit 9
 test -z $DIR_INST  && exit 9
 test -e $DIR_INST/lib64/libgenfit2.so && exit
 
 source $DIR_INST/this-share.sh
 export RAVEPATH=$DIR_BUILD/rave/rave
+
+set -e
 
 DIR_WORK=$DIR_BUILD/genfit
 rm -rf   $DIR_WORK
