@@ -12,8 +12,8 @@ if [ ${HOSTNAME:0:6} = udc-ba ] ; then
     echo "No requirement in this script for UVA Rivanna."
     exit 0
 fi
-if ! grep -q 'Scientific Linux release 7.[6789] ' /etc/redhat-release ; then
-    echo "The OS version seems not SL 7.6, 7.7, 7.8 or 7.9."
+if ! grep -q 'AlmaLinux release 9.[3-9] ' /etc/redhat-release ; then
+    echo "The OS version seems not AL 9."
     echo "Abort since this script assumes this version."
     exit 1
 fi
@@ -32,10 +32,9 @@ done <<EOF
   gcc-c++
   gcc-gfortran
   boost-devel
-  python-devel
+  python3-devel
   cmake
-  doxygen
-  mariadb-devel
+  mariadb-connector-c-devel
   sqlite-devel
   ncurses-devel
   zlib-devel
@@ -57,7 +56,6 @@ done <<EOF
   mesa-libGL-devel
   mesa-libGLU-devel
   gl2ps-devel
-  xxhash-devel
 EOF
 
 if [ ${#LIST_PKG[*]} -eq 0 ] ; then
