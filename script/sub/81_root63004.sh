@@ -31,5 +31,5 @@ cmake --build . --target install -- -j6
 
 if [ "$SINGULARITY_NAME" -o ${HOSTNAME:0:13} = 'spinquestgpvm' ] ; then
     ## Reduce the number of files to mitigate the load on CVMFS.
-    rm -r $DIR_INST/root/{man,test,tutorials}
+    rm -rf $DIR_INST/root/{man,test,tutorials}
 fi
