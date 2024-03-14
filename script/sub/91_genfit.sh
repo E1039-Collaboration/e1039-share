@@ -34,6 +34,6 @@ cmake ../GenFit
 make
 
 # Install files manually since 'make install' runs forever...
-cp -a lib/* $DIR_INST/lib64/
+cp -a *.rootmap *.pcm lib/* $DIR_INST/lib64/
 mkdir -p $DIR_INST/include/GenFit
 cp -a ../GenFit/core/include/* $DIR_INST/include/GenFit/
