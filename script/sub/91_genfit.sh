@@ -7,7 +7,7 @@ test -z $DIR_INST  && exit 9
 test -e $DIR_INST/lib64/libgenfit2.so && exit
 
 source $DIR_INST/this-share.sh
-export RAVEPATH=$DIR_BUILD/rave/rave
+#export RAVEPATH=$DIR_BUILD/rave/rave
 
 set -e
 
@@ -26,14 +26,11 @@ cd ../GenFit-build
 # the PHGenFitPkg package assumes the header files are in "include/GenFit/".
 # In the future it is better to modify the PHGenFitPkg package 
 # so that this special option is not needed.
-#cmake -DCMAKE_INSTALL_PREFIX=$DIR_INST -DINCLUDE_OUTPUT_DIRECTORY:PATH=$DIR_INST/include/GenFit ../GenFit
-#make
-#make install
-
-cmake ../GenFit
+cmake ../GenFit -DLIBRARY_OUTPUT_DIRECTORY:PATH=$DIR_INST/lib64 -DINCLUDE_OUTPUT_DIRECTORY:PATH=$DIR_INST/include/GenFit -DCMAKE_INSTALL_PREFIX=$DIR_INST
 make
+make install
 
 # Install files manually since 'make install' runs forever...
-cp -a *.rootmap *.pcm lib/* $DIR_INST/lib64/
-mkdir -p $DIR_INST/include/GenFit
-cp -a ../GenFit/core/include/* $DIR_INST/include/GenFit/
+# cp -a *.rootmap *.pcm lib/* $DIR_INST/lib64/
+# mkdir -p $DIR_INST/include/GenFit
+# cp -a ../GenFit/core/include/* $DIR_INST/include/GenFit/
