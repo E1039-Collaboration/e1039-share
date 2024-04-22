@@ -24,8 +24,10 @@ declare -a LIST_PKG=()
 while read PKG ; do
     echo "$LIST_ALL" | grep -q "^${PKG}\." || LIST_PKG+=("$PKG")
 done <<EOF
+  epel-release
   wget
   patch
+  rsync
   libtool
   git-all
   gcc
@@ -34,10 +36,14 @@ done <<EOF
   boost-devel
   python3-devel
   cmake
+  mariadb
   mariadb-connector-c-devel
   sqlite-devel
   ncurses-devel
+  libuuid-devel
+  gtest-devel
   zlib-devel
+  bzip2
   bzip2-devel
   freetype-devel
   pcre-devel
