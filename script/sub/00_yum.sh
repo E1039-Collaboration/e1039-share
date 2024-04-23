@@ -36,6 +36,7 @@ done <<EOF
   boost-devel
   python3-devel
   cmake
+  doxygen
   mariadb
   mariadb-connector-c-devel
   sqlite-devel
