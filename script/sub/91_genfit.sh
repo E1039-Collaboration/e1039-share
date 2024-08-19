@@ -32,5 +32,3 @@ make install
 
 # Install rdict and pcm files manually 
 cp -a *.rootmap *.pcm lib/* $DIR_INST/lib64/
-# mkdir -p $DIR_INST/include/GenFit
-# cp -a ../GenFit/core/include/* $DIR_INST/include/GenFit/
