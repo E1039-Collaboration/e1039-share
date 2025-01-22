@@ -7,10 +7,11 @@ test -z $DIR_BUILD && exit 9
 test -z $DIR_INST  && exit 9
 test -e $DIR_INST/include/boost && exit
 
-if [ ${HOSTNAME:0:6} != udc-ba ] ; then
-    echo "Do nothing since host != udc-ba."
-    exit 0
-fi
+#if [ ${HOSTNAME:0:6} != udc-ba ] ; then
+#    echo "Do nothing since host != udc-ba."
+#    exit 0
+#fi
+exit 0 # Do nothing since UVA Rivanna has boost by default.
 
 DIR_WORK=$DIR_BUILD/boost
 mkdir -p $DIR_WORK
@@ -23,7 +24,7 @@ cd boost_1_53_0
 set +e ## We know b2 returns 1 but it seems fine.
 ./b2
 ./b2 install
-return 0
+exit 0
 
 # The version selected here is very old but is the one in SLF 7.6...
 
