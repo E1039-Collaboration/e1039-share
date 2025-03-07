@@ -63,6 +63,9 @@ done <<EOF
   mesa-libGL-devel
   mesa-libGLU-devel
   gl2ps-devel
+  qt5-devel
+  python3-mysqlclient
+  ImageMagick-c++-devel
 EOF
 
 if [ ${#LIST_PKG[*]} -eq 0 ] ; then

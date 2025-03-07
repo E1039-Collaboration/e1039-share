@@ -26,7 +26,7 @@ if [ -e /usr/lib/libgif.so -a ! -e /usr/lib64/libgif.so ] ; then
     # but the x86_64 one isn't.  Indeed "spinquestgpvm" is in such situation.
     # Without these options, cmake tries to link the i686 file and thus fails.
 fi
-cmake -DCMAKE_INSTALL_PREFIX=$DIR_INST/root -Dminuit2=on -Droofit=on -Dopengl=on -Ddavix=off $OPT_EXTRA ../root-6.30.04
+cmake -DCMAKE_INSTALL_PREFIX=$DIR_INST/root -Dminuit2=on -Droofit=on -Dpyroot=on -Dopengl=on -Ddavix=off $OPT_EXTRA ../root-6.30.04
 cmake --build . --target install -- -j6
 
 if [ "$SINGULARITY_NAME" -o ${HOSTNAME:0:13} = 'spinquestgpvm' ] ; then
